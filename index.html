@@ -69,10 +69,7 @@
   .badge-pill b{color:var(--text);font-weight:700}
   .badge-pill .pulse{width:8px;height:8px;border-radius:50%;background:var(--amber)}
   h1{font-size:clamp(2.4rem,6vw,4.3rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;max-width:900px;margin:0 auto}
-  h1 .chip{display:inline-flex;align-items:center;gap:9px;background:var(--panel2);border:1px solid var(--border);border-radius:16px;padding:4px 16px 4px 10px;font-size:.82em;font-weight:700;letter-spacing:-.02em;vertical-align:baseline;white-space:nowrap}
-  h1 .chip .ic{width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:.5em;font-weight:800;color:#fff;flex-shrink:0}
-  .ic-c{background:linear-gradient(135deg,var(--orange),var(--amber))}
-  .ic-g{background:linear-gradient(135deg,#10a37f,var(--teal))}
+  h1 .chip{display:inline-block;background:var(--panel2);border:1px solid var(--border);border-radius:14px;padding:2px 14px;font-size:.82em;font-weight:700;letter-spacing:-.02em;vertical-align:baseline;white-space:nowrap}
   .ic-a{background:linear-gradient(135deg,var(--pink),var(--orange))}
   .ic-o{background:linear-gradient(135deg,var(--teal),#0ea5e9)}
   .ic-p{background:linear-gradient(135deg,var(--amber),var(--red))}
@@ -85,6 +82,8 @@
   .btn-ghost{color:var(--text);background:transparent}
   .cred-row{display:flex;gap:14px;justify-content:center;margin-top:26px;color:var(--muted);font-size:.85rem;flex-wrap:wrap}
   .cred-row span+span:before{content:"·";margin-right:14px;color:var(--border)}
+  .cred-row-sub{margin-top:12px}
+  .cred-tag{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;color:var(--orange)}
 
   /* glance panel */
   .glance{margin-top:64px;background:var(--panel);border:1px solid var(--border);border-radius:20px;overflow:hidden;text-align:left}
@@ -202,14 +201,17 @@
   <div class="hexbg"></div>
   <div class="wrap" style="position:relative">
     <span class="badge-pill reveal"><span class="pulse"></span><b>5,000+</b>&nbsp;people trained across marketing, AI &amp; blockchain</span>
-    <h1 class="reveal">Hands-on AI training on <span class="chip"><span class="ic ic-c">C</span>Claude</span>, <span class="chip"><span class="ic ic-g">GPT</span>ChatGPT</span> and <span class="chip"><span class="ic ic-a">AI</span>AI agents</span>.</h1>
+    <h1 class="reveal">Hands-on AI training on <span class="chip">Claude</span>, <span class="chip">ChatGPT</span> and <span class="chip">AI agents</span>.</h1>
     <p class="lead reveal">I'm Jesu Neelkamal Borah, an AI trainer from Guwahati working with teams across India, <b>live online and in person</b>. 7 years of teaching, the last 1.5 focused on AI: professionals, students and business owners leave having used the tools on real work, not just heard about them.</p>
     <div class="cta-row reveal">
       <a class="btn btn-primary" href="#contact">Book a workshop &#8599;</a>
       <a class="btn btn-ghost" href="#workshops">See delivered sessions &#8595;</a>
     </div>
     <div class="cred-row reveal">
-      <span>NEFDE Academy</span><span>AI CERTs</span><span>Algorand Foundation</span><span>IIM Shillong</span>
+      <span class="cred-tag">Roles</span><span>NEFDE Academy</span><span>AI CERTs</span><span>Algorand Foundation</span>
+    </div>
+    <div class="cred-row cred-row-sub reveal">
+      <span class="cred-tag">Workshops delivered for</span><span>IIM Shillong</span><span>Pandu College</span><span>G20 University Connect</span>
     </div>
 
     <div class="glance reveal">
@@ -306,14 +308,14 @@
       <div class="card reveal" tabindex="0" role="button" aria-expanded="false">
         <div class="card-head">
           <div class="card-top"><span class="badge c3">2 days &middot; Oct 2026</span><span class="plus">+</span></div>
-          <h3>Practical AI for Office Administration &mdash; IIM Shillong</h3>
+          <h3>Practical AI for Office Administration at IIM Shillong</h3>
         </div>
         <div class="card-body"><p>A two-day hands-on program for administrative staff at IIM Shillong: everyday office work with AI tools, from drafting and summaries to spreadsheets and reports.</p></div>
       </div>
       <div class="card reveal" tabindex="0" role="button" aria-expanded="false">
         <div class="card-head">
           <div class="card-top"><span class="badge c4">Faculty development</span><span class="plus">+</span></div>
-          <h3>AI in Teaching &amp; Research &mdash; Pandu College, Guwahati</h3>
+          <h3>AI in Teaching &amp; Research at Pandu College, Guwahati</h3>
         </div>
         <div class="card-body"><p>A faculty development session on using AI in teaching and research workflows: drafting, literature help, assessment support and classroom use cases.</p></div>
       </div>
@@ -356,23 +358,23 @@
     <div class="timeline">
       <div class="t-row reveal">
         <div class="t-when">Current</div>
-        <div><h3>NEFDE Academy (Kaamchor Solutions) &mdash; COO</h3><p>Delivers AI training for professionals, students and business owners, including a two-day Practical AI workshop for officers and staff of IIM Shillong (Oct 2026). Designs build-heavy curricula where participants ship working prototypes.</p></div>
+        <div><h3>NEFDE Academy (Kaamchor Solutions), COO</h3><p>Delivers AI training for professionals, students and business owners, including a two-day Practical AI workshop for officers and staff of IIM Shillong (Oct 2026). Designs build-heavy curricula where participants ship working prototypes.</p></div>
       </div>
       <div class="t-row reveal">
         <div class="t-when">2025</div>
-        <div><h3>AI CERTs &mdash; Program Manager</h3><p>Drove 2,000+ enrollments in certification programs, guided 800+ learners to foundational blockchain certifications, and hosted 6 national seminars with 500+ participants.</p></div>
+        <div><h3>AI CERTs, Program Manager</h3><p>Drove 2,000+ enrollments in certification programs, guided 800+ learners to foundational blockchain certifications, and hosted 6 national seminars with 500+ participants.</p></div>
       </div>
       <div class="t-row reveal">
         <div class="t-when">2024 &ndash; 2025</div>
-        <div><h3>Alephium Blockchain, India &mdash; Ecosystem Program Consultant</h3><p>Delivered a 15-day upskilling cohort for 20+ students and led a 15-day nationwide hackathon with 20+ teams, plus 10+ awareness events across India.</p></div>
+        <div><h3>Alephium Blockchain (India), Ecosystem Program Consultant</h3><p>Delivered a 15-day upskilling cohort for 20+ students and led a 15-day nationwide hackathon with 20+ teams, plus 10+ awareness events across India.</p></div>
       </div>
       <div class="t-row reveal">
         <div class="t-when">2023 &ndash; 2024</div>
-        <div><h3>Algorand Foundation, India &mdash; Consultant</h3><p>Onboarded 20+ partners and engaged 200+ developers through outreach, clubs and events, including the G20 University Connect lecture series at Assam University.</p></div>
+        <div><h3>Algorand Foundation (India), Consultant</h3><p>Onboarded 20+ partners and engaged 200+ developers through outreach, clubs and events, including the G20 University Connect lecture series at Assam University.</p></div>
       </div>
       <div class="t-row reveal">
         <div class="t-when">2019 &ndash; 2023</div>
-        <div><h3>Digital Notice Media Labs &mdash; Head of Operations</h3><p>Led marketing operations, mentored 20+ interns and ran campaigns and creative production for client brands.</p></div>
+        <div><h3>Digital Notice Media Labs, Head of Operations</h3><p>Led marketing operations, mentored 20+ interns and ran campaigns and creative production for client brands.</p></div>
       </div>
     </div>
   </div>
