@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesu Neelkamal Borah — AI Trainer &amp; Workshop Facilitator</title>
+<meta name="description" content="Jesu Neelkamal Borah is an AI trainer based in Guwahati, India. Live, hands-on GenAI workshops for professionals, students and business owners.">
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#121924; --panel2:#0f1520; --line:#1f2b3d;
+    --text:#e8eef6; --muted:#93a4b8; --accent:#f5a623; --accent2:#38c6d9;
+    --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* Nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,15,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:700;letter-spacing:.3px}
+  .brand span{color:var(--accent)}
+  .navlinks{display:flex;gap:22px;font-size:.92rem}
+  .navlinks a{color:var(--muted)}
+  .navlinks a:hover{color:var(--text);text-decoration:none}
+  @media(max-width:640px){.navlinks{display:none}}
+
+  /* Hero */
+  header{min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}}
+  .kicker{display:inline-block;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(245,166,35,.35);padding:6px 14px;border-radius:999px;margin-bottom:20px}
+  h1{font-size:clamp(2.1rem,5.2vw,3.4rem);line-height:1.12;letter-spacing:-.02em;margin-bottom:18px}
+  h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--muted);font-size:1.08rem;max-width:52ch;margin-bottom:28px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.95rem;transition:transform .18s ease,box-shadow .18s ease}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-primary{background:var(--accent);color:#1a1206}
+  .btn-primary:hover{box-shadow:0 8px 28px rgba(245,166,35,.35)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent2)}
+  .hero-photo{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45);transform:perspective(900px) rotateY(-4deg);transition:transform .4s ease}
+  .hero-photo:hover{transform:perspective(900px) rotateY(0deg) scale(1.01)}
+  .hero-photo img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
+  .hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 18px;font-size:.82rem;color:#dbe6f2;background:linear-gradient(transparent,rgba(5,8,12,.85))}
+
+  /* Sections */
+  section{padding:84px 0}
+  .sec-title{font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.01em;margin-bottom:8px}
+  .sec-sub{color:var(--muted);margin-bottom:36px;max-width:64ch}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* Stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center}
+  .stat .num{font-size:2rem;font-weight:800;color:var(--accent)}
+  .stat .lbl{font-size:.85rem;color:var(--muted);margin-top:6px}
+
+  /* Workshops */
+  .cards{display:grid;gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;cursor:pointer;transition:border-color .2s ease}
+  .card:hover{border-color:var(--accent2)}
+  .card-head{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .card h3{font-size:1.08rem;font-weight:650}
+  .card .tag{flex-shrink:0;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);border:1px solid rgba(56,198,217,.35);padding:4px 10px;border-radius:999px}
+  .card .detail{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:.95rem}
+  .card.open .detail{max-height:200px;margin-top:12px}
+  .card .chev{transition:transform .25s ease;color:var(--muted);font-size:1.1rem}
+  .card.open .chev{transform:rotate(45deg)}
+
+  /* Topics */
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-size:.92rem;transition:border-color .2s ease,transform .2s ease}
+  .chip:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+  /* Timeline */
+  .timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:28px;display:grid;gap:26px}
+  .tl-item{position:relative}
+  .tl-item::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .tl-item .when{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2)}
+  .tl-item h3{font-size:1.05rem;margin:4px 0}
+  .tl-item p{color:var(--muted);font-size:.94rem}
+
+  /* Event strip */
+  .event{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);position:relative}
+  .event img{width:100%;display:block;aspect-ratio:21/9;object-fit:cover;filter:saturate(.92)}
+  .event figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;font-size:.85rem;color:#dbe6f2;background:linear-gradient(transparent,rgba(5,8,12,.88))}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+  .contact-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+  .contact-card .k{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .contact-card .v{font-weight:600;word-break:break-word}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Jesu Neelkamal <span>Borah</span></div>
+    <div class="navlinks">
+      <a href="#workshops">Workshops</a>
+      <a href="#topics">Topics</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">AI Trainer · Guwahati, India</span>
+      <h1>Practical AI training where everyone <span class="grad">builds something that works</span></h1>
+      <p class="sub">I'm Jesu Neelkamal Borah, an AI trainer and technology educator with 7 years of teaching experience, the last 1.5 years focused on AI. My workshops are live and hands-on: professionals, students and business owners leave with working builds, not just notes.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Book a workshop</a>
+        <a class="btn btn-ghost" href="#workshops">See delivered sessions</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="speaking-goa-2023.jpg" alt="Jesu Neelkamal Borah speaking to a seated audience at a Road to Impact seminar">
+      <figcaption>Speaking at a Road to Impact seminar, Goa</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="num" data-count="7">7</div><div class="lbl">Years teaching &amp; training</div></div>
+      <div class="stat"><div class="num" data-count="800" data-suffix="+">800+</div><div class="lbl">Learners guided to foundational blockchain certifications</div></div>
+      <div class="stat"><div class="num" data-count="200" data-suffix="+">200+</div><div class="lbl">Students trained &amp; certified via NEFDE Academy workshops</div></div>
+      <div class="stat"><div class="num" data-count="500" data-suffix="+">500+</div><div class="lbl">Participants across 6 national seminars</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="workshops">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Workshops delivered</h2>
+    <p class="sec-sub reveal">Every session is build-heavy: participants ship a working prototype before they leave. Tap a session to see what happened inside.</p>
+    <div class="cards reveal">
+      <div class="card" tabindex="0">
+        <div class="card-head"><h3>Claude Mastery for Non-Technical Professionals</h3><span class="tag">2-day live course</span><span class="chev">+</span></div>
+        <div class="detail">Claude on free accounts, prompt and context engineering, connectors, and building a working app with AI tools. Rerun to a full room of about 30 learners.</div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-head"><h3>Claude Mastery for Technical Professionals</h3><span class="tag">Cohort · ~22</span><span class="chev">+</span></div>
+        <div class="detail">Claude Code in depth: each attendee built an MCP server, connected it to Claude, and shipped a working AI agent with a Telegram interface.</div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-head"><h3>Practical AI for Office Administration — IIM Shillong</h3><span class="tag">2 days · Oct 2026</span><span class="chev">+</span></div>
+        <div class="detail">Two-day workshop for the officers and staff of IIM Shillong: LLM fundamentals, prompt and context engineering, Claude connectors, live dashboards, agentic AI and office-task exercises.</div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-head"><h3>A Beginner's Journey to Forward Deployed Engineering — Pandu College</h3><span class="tag">4-hour hands-on</span><span class="chev">+</span></div>
+        <div class="detail">A build-along workshop where every student built and deployed a live prototype before the session ended.</div>
+      </div>
+      <div class="card" tabindex="0">
+        <div class="card-head"><h3>Ongoing 1:1 AI &amp; Technology Training</h3><span class="tag">Business owners</span><span class="chev">+</span></div>
+        <div class="detail">Private training for a business owner covering system design, the software development lifecycle and practical AI tooling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="topics" style="background:var(--panel2)">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Sessions I can run for your team</h2>
+    <p class="sec-sub reveal">Formats: half-day or two-day live workshops, multi-week cohorts, and executive 1:1 training. Online or on-site.</p>
+    <div class="chips reveal">
+      <span class="chip">Claude for non-technical professionals</span>
+      <span class="chip">Claude Code, MCP servers &amp; agents for technical teams</span>
+      <span class="chip">ChatGPT &amp; everyday AI tools for professionals</span>
+      <span class="chip">AI for business owners</span>
+      <span class="chip">Agentic AI build sessions</span>
+      <span class="chip">No-code / vibe-coding build-alongs</span>
+      <span class="chip">Prompt &amp; context engineering, beginner to advanced</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Where the teaching comes from</h2>
+    <p class="sec-sub reveal">Seven years across training, community and education programs, from grassroots digital literacy to institutional AI workshops.</p>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="when">Now</div>
+        <h3>COO, NEFDE Academy (Kaamchor Solutions)</h3>
+        <p>Designs and delivers AI training for professionals, students and business owners, including the two-day Practical AI workshop for IIM Shillong. Build-heavy curricula where participants ship working prototypes.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2025</div>
+        <h3>Program Manager, AI CERTs</h3>
+        <p>Drove 2,000+ enrollments, guided 800+ learners to foundational blockchain certifications, and hosted 6 national seminars with 500+ participants.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2024 – 2025</div>
+        <h3>Ecosystem Program Consultant, Alephium (India)</h3>
+        <p>Delivered a 15-day upskilling cohort and led a nationwide 15-day hackathon with 20+ teams, from outreach to mentorship.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2023 – 2024</div>
+        <h3>Consultant, Algorand Foundation (India)</h3>
+        <p>Ran developer education, clubs and events across Assam and Madhya Pradesh; co-led Road2Impact with 10+ partners and 300+ developers.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2019 – 2023</div>
+        <h3>Head of Operations, Digital Notice Media Labs</h3>
+        <p>Mentored 20+ interns and facilitated digital-literacy workshops for 100+ grassroots entrepreneurs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="community" style="padding-top:0">
+  <div class="wrap">
+    <figure class="event reveal">
+      <img src="g20-university-connect-2023.jpg" alt="Group on stage at the G20 University Connect lecture series with an Algorand standee">
+      <figcaption>G20 University Connect lecture series, Assam University, with the Algorand community team</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--panel2)">
+  <div class="wrap">
+    <h2 class="sec-title reveal">Bring a workshop to your team</h2>
+    <p class="sec-sub reveal">Tell me who your audience is and what they should walk away able to do. I'll propose a format and a build-along plan.</p>
+    <div class="contact-grid reveal">
+      <div class="contact-card"><div class="k">Email</div><div class="v"><a href="mailto:work.jesuneelkamal@gmail.com">work.jesuneelkamal@gmail.com</a></div></div>
+      <div class="contact-card"><div class="k">Phone / WhatsApp</div><div class="v"><a href="tel:+918404029692">+91 84040 29692</a></div></div>
+      <div class="contact-card"><div class="k">LinkedIn</div><div class="v"><a href="https://www.linkedin.com/in/thesmartobject" rel="noopener">linkedin.com/in/thesmartobject</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Jesu Neelkamal Borah · AI Trainer · Guwahati, Assam, India</div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Count-up stats
+  const cio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el=e.target, target=+el.dataset.count, suffix=el.dataset.suffix||'';
+      const t0=performance.now(), dur=1400;
+      const tick=(t)=>{
+        const p=Math.min((t-t0)/dur,1), eased=1-Math.pow(1-p,3);
+        el.textContent=Math.round(target*eased)+suffix;
+        if(p<1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  },{threshold:.4});
+  document.querySelectorAll('.stat .num').forEach(el=>cio.observe(el));
+
+  // Expandable workshop cards
+  document.querySelectorAll('.card').forEach(c=>{
+    const toggle=()=>c.classList.toggle('open');
+    c.addEventListener('click',toggle);
+    c.addEventListener('keydown',(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggle(); }});
+  });
+</script>
+</body>
+</html>
